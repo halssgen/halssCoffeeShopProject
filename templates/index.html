@@ -1,9 +1,98 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head><title>Haala's Bookstore Cafe</title></head>
 <body>
   <h1>Welcome to Haala's Bookstore Cafe</h1>
   <a href="/menu"> View Book Menu</a><br>
   <a href="/view_orders"> View Your Basket</a>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Halss Coffee Shop</title>
+  <style>
+    :root {
+      --bg-color: #fdf6e3;
+      --primary: #7b5742;
+      --accent: #c9a67b;
+      --text: #333;
+      --btn-hover: #a37856;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background-color: var(--bg-color);
+      color: var(--text);
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header {
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      font-size: 1.2rem;
+      color: #5a4638;
+      margin-bottom: 40px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    a.button {
+      padding: 14px 28px;
+      background-color: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: var(--btn-hover);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #998675;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Halss Coffee Shop</h1>
+    <p class="subtitle">Where good books meet great brews</p>
+  </header>
+
+  <div class="button-group">
+    <a class="button" href="{{ url_for('book_menu') }}">Browse Books</a>
+    <a class="button" href="{{ url_for('view_orders') }}">View Basket</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Halss Coffee Shop. All rights reserved.
+  </footer>
 </body>
 </html>

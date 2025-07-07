@@ -1,20 +1,117 @@
 <!DOCTYPE html>
-<html>
-<head><title>Your Basket</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Basket</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      background: #fff8f0; /* warm cream */
+      color: #5a3e36; /* rich warm brown */
+      font-family: 'Comfortaa', cursive, 'Roboto', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #d05c3c; /* warm burnt orange */
+      text-shadow: 1px 1px 2px #b04b2e;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 1.5rem;
+      background: #f9e6d3; /* pale peach */
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(208, 92, 60, 0.3);
+    }
+
+    li {
+      padding: 0.8rem 1.2rem;
+      border-bottom: 1px solid #e1cfc4;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+
+    strong {
+      font-size: 1.4rem;
+      color: #a84426;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #d05c3c;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #a84426;
+      text-decoration: underline;
+    }
+
+    .btn-group {
+      margin-bottom: 2rem;
+    }
+
+    /* Back to menu link styling */
+    .back-link {
+      font-size: 1.1rem;
+      color: #6b4226;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .back-link:hover {
+      color: #a84426;
+    }
+    .back-link::before {
+      content: '⬅';
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+  </style>
+</head>
 <body>
   <h2>Your Order</h2>
   {% if orders %}
     <ul>
       {% for item in orders %}
-        <li>{{ item.title if item.title else item.name }} - £{{ item.price }}</li>
+        <li>{{ item.title if item.title else item.name }} <span>£{{ item.price }}</span></li>
       {% endfor %}
     </ul>
     <p><strong>Total: £{{ total }}</strong></p>
-    <a href="/save_order">Save Order</a> |
-    <a href="/clear">Clear Basket</a>
+    <div class="btn-group">
+      <a href="/save_order">Save Order</a> |
+      <a href="/clear">Clear Basket</a>
+    </div>
   {% else %}
     <p>Your basket is empty.</p>
   {% endif %}
-  <br><a href="/menu">⬅ Back to Menu</a>
+  <a href="/menu" class="back-link">Back to Menu</a>
 </body>
 </html>

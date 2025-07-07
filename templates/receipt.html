@@ -1,8 +1,61 @@
 <!DOCTYPE html>
-<html>
-<head><title>Order Saved</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Saved</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto:wght@400;700&display=swap');
+
+    body {
+      background: #fff8f0;
+      color: #5a3e36;
+      font-family: 'Comfortaa', cursive, 'Roboto', sans-serif;
+      margin: 0;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #d05c3c;
+      text-shadow: 1px 1px 2px #b04b2e;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      color: #a84426;
+    }
+
+    a {
+      background: #d05c3c;
+      color: #fff8f0;
+      font-weight: 700;
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 8px rgba(208, 92, 60, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    a:hover {
+      background: #a84426;
+      box-shadow: 0 6px 14px rgba(168, 68, 38, 0.6);
+    }
+  </style>
+</head>
 <body>
-  <h2> Order Saved!</h2>
+  <h2>Order Saved!</h2>
   <p>Total: £{{ total }}</p>
   <a href="/">Back to Home</a>
 </body>

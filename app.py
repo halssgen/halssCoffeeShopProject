@@ -47,6 +47,18 @@ def view_orders():
 def clear():
     orders.clear()
     return redirect(url_for('view_orders'))
+@app.route('/add_custom_book', methods=['POST'])
+def add_custom_book():
+    # Ideally, verify employer permissions here
+
+    title = request.form['title']
+    author = request.form['author']
+    price = float(request.form['price'])
+
+    # Add the new book to your books collection/database
+    books.append({'title': title, 'author': author, 'price': price})
+
+    return redirect(url_for('book_menu'))
 
 @app.route('/save_order')
 def save_order():
