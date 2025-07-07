@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Book Menu</title></head>
+<body>
+  <h2>Book Menu</h2>
+  <form method="POST" action="/order_book">
+    {% for book in books %}
+      <p>
+        {{ loop.index }}. {{ book.title }} by {{ book.author }} (£{{ book.price }})
+        <button name="book_index" value="{{ loop.index0 }}">Add to Basket</button>
+      </p>
+    {% endfor %}
+  </form>
+  <h3>Drinks</h3>
+  <form method="POST" action="/order_beverage">
+    <select name="drink">
+      <option>Choose a drink</option>
+      <option value="Coffee">Coffee (£2.50)</option>
+      <option value="Tea">Tea (£2.00)</option>
+      <option value="Soda">Soda (£1.50)</option>
+      <option value="Juice">Juice (£3.00)</option>
+    </select>
+    <button type="submit">Add Drink</button>
+  </form>
+  <a href="/">⬅ Home</a>
+</body>
+</html>
